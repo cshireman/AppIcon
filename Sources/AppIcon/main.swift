@@ -12,7 +12,8 @@ import AppIconCore
 let main = command(Argument<String>("base image (1024x1024.png)", description: "The name of base image"),
                    Option("icon-name", "AppIcon", description: "The name of generated icon name"),
                    Option("output-path", "AppIcon", description: "The name of generated appiconset name"),
-                   Flag("ipad", description: "Whether or not to generate ipad icon")) { base, iconName, path, ipad in
+                   Flag("ipad", description: "Whether or not to generate ipad icon"),
+                   Flag("imessage", description: "Whether or not to generate imessage app icons")) { base, iconName, path, ipad, imessage in
     guard base.hasSuffix(".png") else {
         throw ArgumentError.missingValue(argument: "base image (1024x1024.png)")
     }
